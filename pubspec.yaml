@@ -1,7 +1,7 @@
 name: myapp
 description: A new Flutter project.
 version: 1.0.0+1
-environment: 
+environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
@@ -9,46 +9,47 @@ dependencies:
     sdk: flutter
 
 
+  camera: ^0.10.1
   provider: ^6.0.5
   cached_network_image: ^3.2.1
-  flutter_svg: ^2.0.7
+
   intl: ^0.18.0
   shared_preferences: ^2.2.0
   just_audio: ^0.9.34
-  camera: ^0.10.5+3
-  flutter_tflite: ^1.0.1
+  google_mlkit_face_detection: ^0.8.0
   permission_handler: ^10.4.3
-  path: ^1.8.3
+  flutter_tflite: ^1.0.1
+  flutter_svg: ^2.0.7
+  image_cropper: ^5.0.0
 
 
-
-dev_dependencies: 
-  flutter_test: 
+dev_dependencies:
+  flutter_test:
     sdk: flutter
-flutter: 
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/
     - assets/images/
     - assets/mp3/
     - assets/mp3/1_preview.wav
     - assets/mp3/2-happy.wav
-    - assets/mp3/2_preview.wav
-  fonts: 
+
+  fonts:
     - family: Lato
-      fonts: 
+      fonts:
         - asset: assets/fonts/LatoBold.ttf
           weight: 700
         - asset: assets/fonts/LatoRegular.ttf
           weight: 400
     - family: Inter
-      fonts: 
+      fonts:
         - asset: assets/fonts/InterMedium.ttf
           weight: 500
         - asset: assets/fonts/InterExtraBold.ttf
           weight: 800
     - family: Noto Sans
-      fonts: 
+      fonts:
         - asset: assets/fonts/NotoSansRegular.ttf
           weight: 400
 
