@@ -72,26 +72,20 @@ class _FaceDetectorViewState extends State<FaceDetectorView> {
       );
 
       for (final face in faces) {
-
-
-
-        print(face.smilingProbability);
         if (face.smilingProbability != null) {
           smile = face.smilingProbability;
 
-          if (smile! < 0.8) { // 웃는 표정 확률이 0.9 이상인 경우
+          if (smile! > 0.6) {   //Ideal probability is 0.6
             status = 'Smile';
-            // Play the wav song when a smile is detected
             if (!_audioPlayer.playing) {
-              await _audioPlayer.setAsset('assets/mp3/2-happy.wav'); // Replace with the actual path to your wav file
+              await _audioPlayer.setAsset('assets/mp3/2-happy.wav');
               await _audioPlayer.play();
             }
           } else {
             status = 'Unhappy';
           }
         }
-        print(face.rightEyeOpenProbability);
-        if (face.rightEyeOpenProbability! < 0.3 && face.leftEyeOpenProbability! < 0.3) {
+        if ((face.rightEyeOpenProbability ?? 0.0) < 0.3 && (face.leftEyeOpenProbability ?? 0.0) < 0.3) {
           counter = counter + 1;
           status = 'Closed';
           //text += status;
