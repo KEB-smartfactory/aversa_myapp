@@ -82,6 +82,9 @@ class _FaceDetectorViewState extends State<FaceDetectorView> {
               await _audioPlayer.play();
             }
           } else {
+            if (_audioPlayer.playing && counter<=4) {
+              await _audioPlayer.stop(); // Stop the audio player
+            }
             status = 'Unhappy';
           }
         }
