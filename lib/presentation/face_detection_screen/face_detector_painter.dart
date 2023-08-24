@@ -90,7 +90,7 @@ class FaceDetectorPainter extends CustomPainter {
                 1,
                 paint1);
           }
-          final smileText = face.smilingProbability != null && face.smilingProbability! >= 0.8 ? 'Smile' : 'Unhappy';
+          final smileText = face.smilingProbability != null && face.smilingProbability! > 0.6 ? 'Smile' : 'Unhappy';
           final textPainter = TextPainter(
             text: TextSpan(
               text: smileText,
